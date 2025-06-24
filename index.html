@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <form action="" id="registro" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
+        <p id="mensajeError1" class="error"></p>
+        
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido">
+        <p id="mensajeError2" class="error"></p>
+        
+        <label for="dni">DNI:</label>
+        <input type="number" name="dni" id="dni" placeholder="Ingrese su dni">
+        <p id="mensajeError3" class="error"></p>
+        
+        <label for="correo">Email:</label>
+        <input type="email" name="correo" id="correo" placeholder="Ingrese su correo electronico">
+        <p id="mensajeError4" class="error"></p>
+        
+        <input class="enviar" type="submit" value="Enviar">
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+body {
+    background-color: rgb(155, 185, 241);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+form {
+    max-width: 400px;
+    width: 50%;
+    background-color: white;
+    padding: 20px 15px;
+    margin: 20px auto;
+    border: 1px solid rgb(24, 63, 134);
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px 7px;
+    margin: 0 0 15px 0;
+    display: block;
+    border: 1.6px solid rgb(111, 123, 165);
+    border-radius: 4px;
+}
+
+input:focus {
+    outline: none;
+}
+
+form label {
+    padding: 5px;
+}
+
+.enviar {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(183, 199, 243);
+}
+
+.enviar:hover {
+    background-color: rgb(118, 145, 219);
+    transition: 0.2s;
+}
+
+ /*Clases dinamicas para validacion de los input*/
+p.error{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+    font-size: 0.8em;
+}
+
+input.invalido {
+    background-color: rgb(245, 205, 205);
+    border: 1px solid rgb(209, 6, 6)
+}
+
+input.valido {
+    background-color: rgb(203, 247, 198);
+    border: 1px solid rgb(29, 161, 2)
+}
