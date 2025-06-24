@@ -10,6 +10,12 @@ const m_error2 = document.getElementById('mensajeError2');
 const m_error3 = document.getElementById('mensajeError3');
 const m_error4 = document.getElementById('mensajeError4');
 
+//Funcion loader
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.classList.add('hidden');
+});
+
 function validarCampoTexto(input,errorM) {
     const valor = input.value.trim();
     let valido = true;
