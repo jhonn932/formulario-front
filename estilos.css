@@ -99,8 +99,3 @@ input.valido {
       100% { transform: rotate(360deg); }
     }
 
-    /* Contenido de la página */
-    #contenido {
-      padding: 20px;
-      text-align: center;
-    }
