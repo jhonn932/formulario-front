@@ -48,6 +48,11 @@ form label {
     transition: 0.2s;
 }
 
+.enviar:disabled {
+  pointer-events: none; 
+  cursor: not-allowed; /* Cambia el cursor */
+  border: none;
+}
  /*Clases dinamicas para validacion de los input*/
 p.error{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
