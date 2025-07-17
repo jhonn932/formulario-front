@@ -3,6 +3,7 @@ window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     loader.classList.add('hidden');
 });
+//fin de script del loader
 
 function validarCampos(input,error) {
     const id = document.getElementById(input);
@@ -55,33 +56,41 @@ function validarCampos(input,error) {
     return A;
 }
 
-//input nombre listening
+//cada input tiene su evento de validacion
 nombre.addEventListener("input", () => {
     validarCampos('nombre','mensajeError1');
 }); 
-//input apellido listening
 apellido.addEventListener("input", () => {
     validarCampos('apellido','mensajeError2');
 });
-//input dni listening
 dni.addEventListener("input", () => {
     validarCampos('dni','mensajeError3');
 });
-//input correo listening
 correo.addEventListener("input", () => {
     validarCampos('correo','mensajeError4');
 });
 
-//Validacion antes de enviar los datos
+const n = document.getElementById('nombre');
+const a = document.getElementById('apellido');
+const d = document.getElementById('dni');
+const c = document.getElementById('correo');
+const btn = document.getElementById('btn');
+btn.disabled = true;
+
+//Revalidacion y envio del formulario
 const form = document.getElementById('registro');
-form.addEventListener("submit", function(e){
-    e.preventDefault();
+form.addEventListener("input", () => {
+    btn.disabled = true; 
+    
+    if(n.value && a.value && d.value && c.value) {
+        validarCampos('nombre','mensajeError1');
+        validarCampos('apellido','mensajeError2');          
+        validarCampos('dni','mensajeError3');
+        validarCampos('correo','mensajeError4');
+        btn.disabled = false; // Habilita el botón si todos los campos son válidos
+    }
+});
 
-    validarCampos('nombre','mensajeError1');
-    validarCampos('apellido','mensajeError2');
-    validarCampos('dni','mensajeError3');
-    validarCampos('correo','mensajeError4');
-
-    alert("Felicidades te has registrado exitosamente!");
-    form.submit();
+btn.addEventListener('click', () => {
+    alert("Los datos se han enviado correctamente");
 });
