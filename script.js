@@ -70,23 +70,33 @@ correo.addEventListener("input", () => {
     validarCampos('correo','mensajeError4');
 });
 
-const n = document.getElementById('nombre');
-const a = document.getElementById('apellido');
-const d = document.getElementById('dni');
-const c = document.getElementById('correo');
+
 const btn = document.getElementById('btn');
 btn.disabled = true;
 
-//una ves que los campos tengan valores Revalida para despues habilitar el boton
+function todosTienenContenido() {
+    const n = document.getElementById('nombre');
+    const a = document.getElementById('apellido');
+    const d = document.getElementById('dni');
+    const c = document.getElementById('correo');
+    return n.value && a.value && d.value && c.value;
+}
+
+function validarTodo() {
+    const validoNombre = validarCampos('nombre','mensajeError1');
+    const validoApellido = validarCampos('apellido','mensajeError2');
+    const validoDni = validarCampos('dni','mensajeError3');
+    const validoCorreo = validarCampos('correo','mensajeError4');
+    return validoNombre && validoApellido && validoDni && validoCorreo;
+}
+
 const form = document.getElementById('registro');
 form.addEventListener("input", () => {
-    btn.disabled = true; 
-    
-    if(n.value && a.value && d.value && c.value) {
-        validarCampos('nombre','mensajeError1');
-        validarCampos('apellido','mensajeError2');          
-        validarCampos('dni','mensajeError3');
-        validarCampos('correo','mensajeError4');
-        btn.disabled = false; // Habilita el botón si todos los campos son válidos
+    btn.disabled = true;
+
+    if (todosTienenContenido()) {
+        if (validarTodo()) {
+            btn.disabled = false;
+        }
     }
 });
