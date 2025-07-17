@@ -77,7 +77,7 @@ const c = document.getElementById('correo');
 const btn = document.getElementById('btn');
 btn.disabled = true;
 
-//Revalidacion y envio del formulario
+//una ves que los campos tengan valores Revalida para despues habilitar el boton
 const form = document.getElementById('registro');
 form.addEventListener("input", () => {
     btn.disabled = true; 
@@ -89,8 +89,4 @@ form.addEventListener("input", () => {
         validarCampos('correo','mensajeError4');
         btn.disabled = false; // Habilita el botón si todos los campos son válidos
     }
-});
-
-btn.addEventListener('click', () => {
-    alert("Los datos se han enviado correctamente");
 });
